@@ -6,14 +6,14 @@ import CommentList from '@/components/comments/comment-list';
 import { fetchCommentsByPostId } from '@/db/queries/comments';
 
 interface PostShowPageProps {
-    params: {
+    params: Promise<{
         slug: string;
         postId: string;
-    };
+    }>;
 }
 
 export default async function PostShowPage({ params }: PostShowPageProps) {
-    const { slug, postId } = params;
+    const { slug, postId } = await params;
     return (
         <div className="space-y-3">
             <Link
