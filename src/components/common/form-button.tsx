@@ -1,15 +1,16 @@
 'use client';
 
-import { Button } from '@nextui-org/react';
+import { Button, ButtonProps } from '@nextui-org/react';
 
-interface FormButtonProps {
-    children: React.ReactNode;
-    isLoading: boolean;
-}
-
-function FormButton({ children, isLoading }: FormButtonProps) {
+function FormButton({ children, isLoading, size }: ButtonProps) {
     return (
-        <Button type="submit" radius="full" isLoading={isLoading}>
+        <Button
+            type="submit"
+            radius="full"
+            variant="flat"
+            isLoading={isLoading}
+            size={size}
+        >
             {children}
         </Button>
     );
