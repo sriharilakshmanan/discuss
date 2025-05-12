@@ -9,9 +9,10 @@ import {
 } from '@nextui-org/react';
 import * as actions from '@/actions';
 import { startTransition, useActionState } from 'react';
+import FormButton from '../common/form-button';
 
 export default function TopicCreateForm() {
-    const [formState, action] = useActionState(actions.createTopic, {
+    const [formState, action, isPending] = useActionState(actions.createTopic, {
         errors: {},
     });
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -56,9 +57,7 @@ export default function TopicCreateForm() {
                             {formState.errors._form.join(', ')}
                         </p>
                     ) : null}
-                    <Button type="submit" radius="full">
-                        Submit
-                    </Button>
+                    <FormButton isLoading={isPending}>Save</FormButton>
                 </form>
             </PopoverContent>
         </Popover>
