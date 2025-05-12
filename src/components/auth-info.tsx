@@ -20,7 +20,10 @@ export default function AuthInfo() {
             <NavbarItem>
                 <Popover placement="bottom" offset={16}>
                     <PopoverTrigger>
-                        <Avatar src={session.user.image || ''} />
+                        <Avatar
+                            src={session.user.image || ''}
+                            className="cursor-pointer"
+                        />
                     </PopoverTrigger>
                     <PopoverContent>
                         <NavbarItem>
