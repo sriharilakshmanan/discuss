@@ -7,7 +7,7 @@ async function TopicList() {
     const topics = await db.topic.findMany();
     const renderedTopics = topics.map((topic) => (
         <Link href={paths.topicShow(topic.slug)} key={topic.id}>
-            <Chip color="warning" variant="shadow">
+            <Chip color="warning" variant="flat">
                 {topic.slug}
             </Chip>
         </Link>
