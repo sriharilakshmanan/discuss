@@ -51,7 +51,7 @@ export default function CommentCreateForm({
                 ) : null}
 
                 <FormButton isLoading={isPending} size="sm">
-                    Comment
+                    comment
                 </FormButton>
             </div>
         </form>
@@ -65,7 +65,7 @@ export default function CommentCreateForm({
                 variant="flat"
                 onPress={() => setOpen(!open)}
             >
-                Reply
+                reply
             </Button>
             {open && form}
         </>

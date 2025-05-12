@@ -16,8 +16,11 @@ export default async function PostShowPage({ params }: PostShowPageProps) {
     const { slug, postId } = params;
     return (
         <div className="space-y-3">
-            <Link className="decoration-solid" href={paths.topicShow(slug)}>
-                {`<< back to ${slug}`}
+            <Link
+                className="decoration-solid underline"
+                href={paths.topicShow(slug)}
+            >
+                {`> ${slug}`}
             </Link>
             <PostShow postId={postId} />
             <CommentCreateForm postId={postId} startOpen />

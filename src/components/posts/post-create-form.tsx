@@ -31,7 +31,7 @@ function PostCreateForm({ topicSlug }: PostCreateFormProps) {
                     variant="flat"
                     className="w-full"
                 >
-                    Create Post
+                    create post
                 </Button>
             </PopoverTrigger>
             <PopoverContent>
@@ -40,20 +40,19 @@ function PostCreateForm({ topicSlug }: PostCreateFormProps) {
                     noValidate
                     className="flex flex-col gap-4 p-4 w-80"
                 >
-                    <h3 className="text-lg">Create Post</h3>
                     <Input
                         name="title"
-                        label="Title"
+                        label="title"
                         labelPlacement="outside"
-                        placeholder="Title of the post"
+                        placeholder="title of post"
                         isInvalid={!!formState.errors.title}
                         errorMessage={formState.errors.title?.join(', ')}
                     />
                     <Textarea
                         name="content"
-                        label="Content"
+                        label="content"
                         labelPlacement="outside"
-                        placeholder="Content of the post"
+                        placeholder="content of post"
                         isInvalid={!!formState.errors.content}
                         errorMessage={formState.errors.content?.join(', ')}
                     />
@@ -62,7 +61,7 @@ function PostCreateForm({ topicSlug }: PostCreateFormProps) {
                             {formState.errors._form.join(', ')}
                         </p>
                     ) : null}
-                    <FormButton isLoading={isPending}>Save</FormButton>
+                    <FormButton isLoading={isPending}>save</FormButton>
                 </form>
             </PopoverContent>
         </Popover>

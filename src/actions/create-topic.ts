@@ -11,9 +11,9 @@ import { revalidatePath } from 'next/cache';
 const createTopicSchema = z.object({
     name: z
         .string()
-        .min(2, 'Must be at least 2 characters long')
-        .regex(/[a-z-]/, 'Must be lowercase and hyphenated'),
-    description: z.string().min(10, 'Must be at least 10 characters long'),
+        .min(2, 'must be at least 2 characters long')
+        .regex(/[a-z-]/, 'must be lowercase, hyphenated'),
+    description: z.string().min(10, 'must be at least 10 characters long'),
 });
 
 interface CreateTopicFormState {
@@ -28,7 +28,7 @@ export async function createTopic(
     if (!session || !session.user) {
         return {
             errors: {
-                _form: ['You must be signed in to create a topic'],
+                _form: ['you must be signed in to create a topic'],
             },
         };
     }
@@ -61,7 +61,7 @@ export async function createTopic(
         }
         return {
             errors: {
-                _form: ['Something went wrong. Please try again later.'],
+                _form: ['something went wrong, please try again later.'],
             },
         };
     }

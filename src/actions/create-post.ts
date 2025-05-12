@@ -8,8 +8,8 @@ import { db } from '@/db';
 import paths from '@/paths';
 
 const createPostSchema = z.object({
-    title: z.string().min(2, 'Must be at least 2 characters long'),
-    content: z.string().min(10, 'Must be at least 10 characters long'),
+    title: z.string().min(2, 'must be at least 2 characters long'),
+    content: z.string().min(10, 'must be at least 10 characters long'),
 });
 
 interface CreatePostFormState {
@@ -25,7 +25,7 @@ export async function createPost(
     if (!session || !session.user || !session.user.id) {
         return {
             errors: {
-                _form: ['You must be signed in to create a post'],
+                _form: ['you must be signed in to create a post'],
             },
         };
     }
@@ -47,7 +47,7 @@ export async function createPost(
     if (!topic) {
         return {
             errors: {
-                _form: ['Topic not found'],
+                _form: ['topic not found'],
             },
         };
     }
@@ -71,7 +71,7 @@ export async function createPost(
         }
         return {
             errors: {
-                _form: ['Something went wrong. Please try again later.'],
+                _form: ['something went wrong, please try again later.'],
             },
         };
     }

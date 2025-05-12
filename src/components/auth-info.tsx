@@ -37,7 +37,7 @@ export default function AuthInfo() {
                                     variant="light"
                                     radius="full"
                                 >
-                                    Sign Out
+                                    sign out
                                 </Button>
                             </form>
                         </NavbarItem>
@@ -51,14 +51,14 @@ export default function AuthInfo() {
                 <NavbarItem>
                     <form action={actions.signIn}>
                         <Button type="submit" variant="light" radius="full">
-                            Register
+                            sign up
                         </Button>
                     </form>
                 </NavbarItem>
                 <NavbarItem>
                     <form action={actions.signIn}>
                         <Button type="submit" variant="flat" radius="full">
-                            Sign In
+                            sign in
                         </Button>
                     </form>
                 </NavbarItem>

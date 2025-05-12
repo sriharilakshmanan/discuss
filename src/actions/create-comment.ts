@@ -7,7 +7,7 @@ import { db } from '@/db';
 import paths from '@/paths';
 
 const createCommentSchema = z.object({
-    content: z.string().min(4, 'Must be at least 4 characters long'),
+    content: z.string().min(4, 'must be at least 4 characters long'),
 });
 
 interface CreateCommentFormState {
@@ -27,7 +27,7 @@ export async function createComment(
     if (!session || !session.user || !session.user.id) {
         return {
             errors: {
-                _form: ['You must be signed in to leave a comment.'],
+                _form: ['you must be signed in to leave a comment.'],
             },
         };
     }
@@ -63,7 +63,7 @@ export async function createComment(
         } else {
             return {
                 errors: {
-                    _form: ['Something went wrong. Please try again later.'],
+                    _form: ['something went wrong, please try again later.'],
                 },
             };
         }
@@ -76,7 +76,7 @@ export async function createComment(
     if (!topic) {
         return {
             errors: {
-                _form: ['Topic not found. Failed to revalidate page.'],
+                _form: ['topic not found, hence failed to revalidate page.'],
             },
         };
     }

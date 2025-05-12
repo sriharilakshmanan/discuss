@@ -7,8 +7,8 @@ import Header from '@/components/header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Discuss',
-    description: 'A minimalistic forum',
+    title: 'discuss',
+    description: 'a minimalistic forum',
 };
 
 export default function RootLayout({

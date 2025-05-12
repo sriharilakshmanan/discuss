@@ -12,7 +12,7 @@ async function PostList({ fetchPosts }: PostListProps) {
         const topicSlug = post.topic.slug;
 
         if (!topicSlug) {
-            throw new Error('Need a slug to link to a post');
+            throw new Error('need a slug to link to a post');
         }
 
         return (
@@ -21,7 +21,7 @@ async function PostList({ fetchPosts }: PostListProps) {
                     <h3 className="text-lg font-semibold">{post.title}</h3>
                     <div className="flex flex-row gap-8">
                         <p className="text-xs text-gray-400">
-                            By {post.user.name}
+                            by {post.user.name}
                         </p>
                         <p className="text-xs text-gray-400">
                             {post._count.comments} comments

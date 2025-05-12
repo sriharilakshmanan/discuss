@@ -6,7 +6,7 @@ export default async function Home() {
     return (
         <div className="grid grid-cols-4 gap-4 p-4 justify-end">
             <div className="col-span-3">
-                <h1 className="text-2xl font-bold mb-2">Top Posts</h1>
+                <h1 className="text-2xl font-bold mb-2">top posts</h1>
             </div>
             <div>
                 <TopicCreateForm />

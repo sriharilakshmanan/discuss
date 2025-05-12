@@ -31,7 +31,7 @@ export default function TopicCreateForm() {
                     variant="flat"
                     className="w-full"
                 >
-                    Create Topic
+                    create topic
                 </Button>
             </PopoverTrigger>
             <PopoverContent>
@@ -40,20 +40,19 @@ export default function TopicCreateForm() {
                     onSubmit={handleSubmit}
                     noValidate
                 >
-                    <h3 className="text-lg">Create Topic</h3>
                     <Input
                         name="name"
-                        label="Name"
+                        label="name"
                         labelPlacement="outside"
-                        placeholder="Name the topic"
+                        placeholder="name of topic"
                         isInvalid={!!formState.errors.name}
                         errorMessage={formState.errors.name?.join(', ')}
                     />
                     <Textarea
                         name="description"
-                        label="Description"
+                        label="description"
                         labelPlacement="outside"
-                        placeholder="Describe the topic"
+                        placeholder="description of topic"
                         isInvalid={!!formState.errors.description}
                         errorMessage={formState.errors.description?.join(', ')}
                     />
@@ -62,7 +61,7 @@ export default function TopicCreateForm() {
                             {formState.errors._form.join(', ')}
                         </p>
                     ) : null}
-                    <FormButton isLoading={isPending}>Save</FormButton>
+                    <FormButton isLoading={isPending}>save</FormButton>
                 </form>
             </PopoverContent>
         </Popover>
