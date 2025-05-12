@@ -25,7 +25,12 @@ function PostCreateForm({ topicSlug }: PostCreateFormProps) {
     return (
         <Popover placement="bottom" backdrop="opaque">
             <PopoverTrigger>
-                <Button color="primary" radius="full">
+                <Button
+                    color="primary"
+                    radius="full"
+                    variant="flat"
+                    className="w-full"
+                >
                     Create Post
                 </Button>
             </PopoverTrigger>

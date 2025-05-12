@@ -25,7 +25,12 @@ export default function TopicCreateForm() {
     return (
         <Popover placement="bottom" backdrop="opaque">
             <PopoverTrigger>
-                <Button color="primary" radius="full">
+                <Button
+                    color="primary"
+                    radius="full"
+                    variant="flat"
+                    className="w-full"
+                >
                     Create Topic
                 </Button>
             </PopoverTrigger>
