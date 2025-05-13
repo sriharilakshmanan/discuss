@@ -1,3 +1,5 @@
+import PostList from '@/components/posts/post-list';
+import { fetchPostsBySearchKey } from '@/db/queries/posts';
 import { redirect } from 'next/navigation';
 
 interface SearchPageProps {
@@ -13,7 +15,10 @@ async function SearchPage({ searchParams }: SearchPageProps) {
     }
     return (
         <div>
-            <h1>Search: {key}</h1>
+            <h1 className="text-2xl font-medium mb-4">
+                {`search results for "${key}"`}
+            </h1>
+            <PostList fetchPosts={() => fetchPostsBySearchKey(key)} />
         </div>
     );
 }

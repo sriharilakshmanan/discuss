@@ -31,3 +31,18 @@ export function fetchTopPosts(): Promise<PostWithMetadata[]> {
         take: 5,
     });
 }
+
+export function fetchPostsBySearchKey(
+    key: string
+): Promise<PostWithMetadata[]> {
+    return db.post.findMany({
+        include: {
+            topic: { select: { slug: true } },
+            user: { select: { name: true } },
+            _count: { select: { comments: true } },
+        },
+        where: {
+            OR: [{ title: { contains: key } }, { content: { contains: key } }],
+        },
+    });
+}
