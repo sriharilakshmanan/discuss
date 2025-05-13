@@ -19,3 +19,15 @@ export function fetchPostsByTopicSlug(
         },
     });
 }
+
+export function fetchTopPosts(): Promise<PostWithMetadata[]> {
+    return db.post.findMany({
+        orderBy: { comments: { _count: 'desc' } },
+        include: {
+            topic: { select: { slug: true } },
+            user: { select: { name: true } },
+            _count: { select: { comments: true } },
+        },
+        take: 5,
+    });
+}
