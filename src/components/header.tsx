@@ -11,7 +11,7 @@ import { Suspense } from 'react';
 
 function Header() {
     return (
-        <Navbar className="shadow mb-6">
+        <Navbar className="shadow">
             <NavbarBrand>
                 <Link href={'/'} className="font-bold">
                     {'> discuss'}
@@ -25,7 +25,9 @@ function Header() {
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify="end">
-                <AuthInfo />
+                <NavbarItem>
+                    <AuthInfo />
+                </NavbarItem>
             </NavbarContent>
         </Navbar>
     );

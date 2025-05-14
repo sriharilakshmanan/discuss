@@ -11,6 +11,7 @@ function SearchInput() {
                 name="key"
                 placeholder="search"
                 defaultValue={searchParams.get('key') || ''}
+                size="sm"
             />
         </form>
     );

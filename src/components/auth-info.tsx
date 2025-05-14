@@ -2,7 +2,6 @@
 import {
     Avatar,
     Button,
-    NavbarItem,
     Popover,
     PopoverContent,
     PopoverTrigger,
@@ -17,52 +16,36 @@ export default function AuthInfo() {
         authInfo = null;
     } else if (session?.user) {
         authInfo = (
-            <NavbarItem>
-                <Popover placement="bottom" offset={16}>
-                    <PopoverTrigger>
-                        <Avatar
-                            src={session.user.image || ''}
-                            className="cursor-pointer"
-                        />
-                    </PopoverTrigger>
-                    <PopoverContent>
-                        <NavbarItem>
-                            <form
-                                action={actions.signOut}
-                                className="px-4 py-2"
-                            >
-                                <Button
-                                    type="submit"
-                                    color="default"
-                                    variant="light"
-                                    radius="full"
-                                >
-                                    sign out
-                                </Button>
-                            </form>
-                        </NavbarItem>
-                    </PopoverContent>
-                </Popover>
-            </NavbarItem>
+            <Popover placement="bottom" offset={16}>
+                <PopoverTrigger>
+                    <Avatar
+                        src={session.user.image || ''}
+                        className="cursor-pointer"
+                        size="sm"
+                    />
+                </PopoverTrigger>
+                <PopoverContent>
+                    <form action={actions.signOut} className="px-4 py-2">
+                        <Button
+                            type="submit"
+                            color="default"
+                            variant="flat"
+                            radius="full"
+                            size="sm"
+                        >
+                            sign out
+                        </Button>
+                    </form>
+                </PopoverContent>
+            </Popover>
         );
     } else {
         authInfo = (
-            <>
-                <NavbarItem>
-                    <form action={actions.signIn}>
-                        <Button type="submit" variant="light" radius="full">
-                            sign up
-                        </Button>
-                    </form>
-                </NavbarItem>
-                <NavbarItem>
-                    <form action={actions.signIn}>
-                        <Button type="submit" variant="flat" radius="full">
-                            sign in
-                        </Button>
-                    </form>
-                </NavbarItem>
-            </>
+            <form action={actions.signIn}>
+                <Button type="submit" variant="flat" radius="full" size="sm">
+                    sign in
+                </Button>
+            </form>
         );
     }
     return authInfo;
