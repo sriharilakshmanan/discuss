@@ -6,12 +6,12 @@ import { Divider } from '@nextui-org/react';
 
 export default async function Home() {
     return (
-        <div className="grid grid-cols-4 gap-4 p-4 justify-end">
-            <div className="col-span-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <div className="col-span-1 md:col-span-8">
                 <h1 className="text-2xl font-bold mb-4">top posts</h1>
                 <PostList fetchPosts={() => fetchTopPosts()} />
             </div>
-            <div>
+            <div className="col-span-1 md:col-span-4">
                 <TopicCreateForm />
                 <Divider className="my-2" />
                 <h3 className="text-xl font-bold my-2">topics</h3>
