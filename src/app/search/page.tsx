@@ -14,12 +14,12 @@ async function SearchPage({ searchParams }: SearchPageProps) {
         redirect('/');
     }
     return (
-        <div>
+        <>
             <h1 className="text-2xl font-medium mb-4">
                 {`search results for "${key}"`}
             </h1>
             <PostList fetchPosts={() => fetchPostsBySearchKey(key)} />
-        </div>
+        </>
     );
 }
 
